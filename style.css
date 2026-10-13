@@ -1,10 +1,11 @@
 /* =========================================================
    AHMED HATEM — ENGINEERING PORTFOLIO
+   DARK GREEN / NEON GREEN ROBOT THEME
 ========================================================= */
 
 
 /* =========================================================
-   ROOT VARIABLES
+   VARIABLES
 ========================================================= */
 
 :root {
@@ -18,19 +19,22 @@
     --green: #66ff00;
     --green-bright: #7cff35;
 
-    --green-soft: rgba(102, 255, 0, 0.12);
-    --green-border: rgba(102, 255, 0, 0.28);
+    --green-soft:
+        rgba(102, 255, 0, 0.12);
+
+    --green-border:
+        rgba(102, 255, 0, 0.28);
 
     --text: #f4f8f3;
     --text-soft: #c8d2cb;
     --text-muted: #8f9d94;
 
-    --border: rgba(190, 220, 200, 0.14);
+    --border:
+        rgba(190, 220, 200, 0.14);
 
     --max-width: 1280px;
 
     --radius: 20px;
-    --radius-small: 12px;
 
     --font:
         "Inter",
@@ -53,13 +57,17 @@
 
 
 html {
+
     scroll-behavior: smooth;
+
     scroll-padding-top: 90px;
 }
 
 
 body {
+
     background: var(--bg);
+
     color: var(--text);
 
     font-family: var(--font);
@@ -71,18 +79,22 @@ body {
 
 
 img {
+
     max-width: 100%;
 }
 
 
 a {
+
     color: inherit;
+
     text-decoration: none;
 }
 
 
 button,
 a {
+
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -104,6 +116,7 @@ a {
 
 
 .narrow {
+
     max-width: 900px;
 }
 
@@ -180,9 +193,11 @@ a {
     background:
         rgba(5, 13, 8, 0.92);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
-    -webkit-backdrop-filter: blur(18px);
+    -webkit-backdrop-filter:
+        blur(18px);
 }
 
 
@@ -224,9 +239,11 @@ a {
 
 .brand:hover {
 
-    color: var(--green-bright);
+    color:
+        var(--green-bright);
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 
@@ -242,7 +259,8 @@ a {
 
 .nav-links a {
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     font-size: 15px;
 
@@ -256,9 +274,11 @@ a {
 
 .nav-links a:hover {
 
-    color: var(--green);
+    color:
+        var(--green);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 
@@ -269,9 +289,11 @@ a {
     border:
         1px solid var(--border);
 
-    background: transparent;
+    background:
+        transparent;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     width: 44px;
 
@@ -325,7 +347,7 @@ a {
     background:
         radial-gradient(
             circle,
-            rgba(72, 255, 0, 0.12),
+            rgba(72,255,0,0.12),
             transparent 68%
         );
 
@@ -350,7 +372,7 @@ a {
     background:
         radial-gradient(
             circle,
-            rgba(72, 255, 0, 0.06),
+            rgba(72,255,0,0.06),
             transparent 70%
         );
 
@@ -381,6 +403,7 @@ a {
 ========================================================= */
 
 .hero-content {
+
     max-width: 780px;
 }
 
@@ -389,7 +412,8 @@ a {
 
     margin-bottom: 26px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 16px;
 
@@ -436,7 +460,8 @@ a {
 
     margin-bottom: 28px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size:
         clamp(
@@ -459,7 +484,8 @@ a {
 
     margin-bottom: 28px;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     font-size: 20px;
 
@@ -468,7 +494,7 @@ a {
 
 
 /* =========================================================
-   HERO USP
+   USP
 ========================================================= */
 
 .hero-usp {
@@ -477,11 +503,11 @@ a {
 
     margin-bottom: 32px;
 
-    padding: 20px 22px;
+    padding:
+        20px 22px;
 
     border-left:
-        3px solid
-        var(--green);
+        3px solid var(--green);
 
     background:
         linear-gradient(
@@ -504,7 +530,8 @@ a {
 
     margin-bottom: 7px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 12px;
 
@@ -516,7 +543,8 @@ a {
 
 .hero-usp p {
 
-    color: #dce7df;
+    color:
+        #dce7df;
 
     font-size: 16px;
 
@@ -569,15 +597,18 @@ a {
 
 .btn.primary {
 
-    background: var(--green);
+    background:
+        var(--green);
 
-    color: #061006;
+    color:
+        #061006;
 }
 
 
 .btn.primary:hover {
 
-    background: var(--green-bright);
+    background:
+        var(--green-bright);
 
     transform:
         translateY(-3px);
@@ -596,7 +627,8 @@ a {
     background:
         rgba(255,255,255,0.015);
 
-    color: var(--text);
+    color:
+        var(--text);
 }
 
 
@@ -605,7 +637,8 @@ a {
     border-color:
         var(--green-border);
 
-    color: var(--green);
+    color:
+        var(--green);
 
     transform:
         translateY(-3px);
@@ -626,7 +659,8 @@ a {
 
 .quick-links a {
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 16px;
 
@@ -639,7 +673,8 @@ a {
 
 .quick-links a:hover {
 
-    color: var(--green);
+    color:
+        var(--green);
 }
 
 
@@ -761,10 +796,6 @@ a {
 }
 
 
-/* =========================================================
-   PROFILE OVERLAY
-========================================================= */
-
 .profile-overlay {
 
     position: absolute;
@@ -806,7 +837,8 @@ a {
 
     margin-bottom: 10px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 14px;
 
@@ -818,60 +850,341 @@ a {
 
 .profile-overlay strong {
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     font-size: 19px;
 
     font-weight: 900;
-
-    letter-spacing: 0.01em;
 }
 
 
 /* =========================================================
-   ABOUT
+   STORY
 ========================================================= */
 
-#about p:not(.section-kicker) {
+.story-section {
 
-    margin-bottom: 24px;
+    overflow: hidden;
+}
 
-    color: var(--text-soft);
 
-    font-size: 19px;
+.story-intro {
+
+    max-width: 850px;
+
+    margin-bottom: 70px;
+}
+
+
+.story-intro p {
+
+    color:
+        var(--text-soft);
+
+    font-size: 22px;
 
     line-height: 1.75;
 }
 
 
-blockquote {
+/* STORY TIMELINE */
 
-    margin-top: 42px;
+.story-timeline {
 
-    padding:
-        25px
-        30px;
+    position: relative;
 
-    border-left:
-        3px solid
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.story-timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 31px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(102,255,0,0.35) 5%,
+            rgba(102,255,0,0.35) 95%,
+            transparent
+        );
+}
+
+
+/* STORY ITEM */
+
+.story-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        64px 1fr;
+
+    gap: 35px;
+
+    padding-bottom: 75px;
+}
+
+
+.story-item:last-child {
+
+    padding-bottom: 0;
+}
+
+
+/* NUMBER */
+
+.story-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 64px;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(102,255,0,0.4);
+
+    border-radius: 50%;
+
+    background:
+        #071009;
+
+    color:
         var(--green);
 
-    color: var(--text);
+    font-size: 13px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 0 8px
+        rgba(102,255,0,0.025);
+}
+
+
+/* STORY CONTENT */
+
+.story-content {
+
+    padding:
+        4px 0 0;
+}
+
+
+.story-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--green);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+}
+
+
+.story-content h3 {
+
+    margin-bottom: 20px;
+
+    color:
+        var(--text);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            45px
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -0.035em;
+}
+
+
+.story-content p {
+
+    max-width: 780px;
+
+    margin-bottom: 17px;
+
+    color:
+        var(--text-soft);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* HIGHLIGHT */
+
+.story-highlight {
+
+    margin-left: -18px;
+
+    padding:
+        30px
+        18px
+        75px;
+
+    border-left:
+        1px solid
+        rgba(102,255,0,0.08);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(102,255,0,0.055),
+            transparent 75%
+        );
+}
+
+
+/* ACHIEVEMENT */
+
+.story-achievement {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 10px;
+
+    padding:
+        12px
+        17px;
+
+    border:
+        1px solid
+        rgba(102,255,0,0.2);
+
+    border-radius: 10px;
 
     background:
         rgba(102,255,0,0.045);
+}
 
-    border-radius:
-        0
-        14px
-        14px
-        0;
 
-    font-size: 22px;
+.story-achievement strong {
+
+    color:
+        var(--green);
+
+    font-size: 24px;
+}
+
+
+.story-achievement span {
+
+    color:
+        var(--text-soft);
+
+    font-size: 13px;
 
     font-weight: 700;
+}
 
-    line-height: 1.5;
+
+/* FINAL */
+
+.story-final .story-number {
+
+    background:
+        var(--green);
+
+    color:
+        #061006;
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 25px
+        rgba(102,255,0,0.18);
+}
+
+
+.story-final .story-content h3 {
+
+    color:
+        var(--green);
+}
+
+
+/* END */
+
+.story-ending {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 28px;
+}
+
+
+.story-ending span {
+
+    width: 42px;
+
+    height: 2px;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 12px
+        rgba(102,255,0,0.3);
+}
+
+
+.story-ending strong {
+
+    color:
+        var(--green);
+
+    font-size: 13px;
+
+    letter-spacing: 0.15em;
 }
 
 
@@ -931,6 +1244,7 @@ blockquote {
 .skill-icon {
 
     width: 58px;
+
     height: 58px;
 
     display: flex;
@@ -947,7 +1261,8 @@ blockquote {
 
     border-radius: 14px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     background:
         rgba(102,255,0,0.06);
@@ -962,7 +1277,8 @@ blockquote {
 
     margin-bottom: 13px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 25px;
 }
@@ -972,7 +1288,8 @@ blockquote {
 
     margin-bottom: 22px;
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 16px;
 
@@ -1024,7 +1341,7 @@ blockquote {
 
 
 /* =========================================================
-   ENGINEERING PROCESS
+   PROCESS
 ========================================================= */
 
 .process {
@@ -1045,8 +1362,7 @@ blockquote {
     min-height: 190px;
 
     padding:
-        22px
-        18px;
+        22px 18px;
 
     border:
         1px solid
@@ -1065,7 +1381,8 @@ blockquote {
 
     margin-bottom: 20px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 12px;
 
@@ -1079,7 +1396,8 @@ blockquote {
 
     margin-bottom: 10px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 18px;
 }
@@ -1087,7 +1405,8 @@ blockquote {
 
 .process-step p {
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 13px;
 
@@ -1099,7 +1418,8 @@ blockquote {
 
     margin-top: 30px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 17px;
 
@@ -1161,9 +1481,7 @@ blockquote {
 }
 
 
-/* =========================================================
-   PROJECT IMAGE
-========================================================= */
+/* PROJECT IMAGE */
 
 .project-image {
 
@@ -1231,8 +1549,7 @@ blockquote {
     bottom: 18px;
 
     padding:
-        8px
-        13px;
+        8px 13px;
 
     border:
         1px solid
@@ -1257,9 +1574,7 @@ blockquote {
 }
 
 
-/* =========================================================
-   PROJECT CONTENT
-========================================================= */
+/* PROJECT CONTENT */
 
 .project-content {
 
@@ -1274,7 +1589,8 @@ blockquote {
 
     margin-bottom: 12px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 13px;
 
@@ -1288,7 +1604,8 @@ blockquote {
 
     margin-bottom: 15px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 27px;
 
@@ -1302,7 +1619,8 @@ blockquote {
 
     margin-bottom: 22px;
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 15px;
 
@@ -1310,15 +1628,12 @@ blockquote {
 }
 
 
-/* =========================================================
-   ACHIEVEMENT
-========================================================= */
-
 .achievement {
 
     margin-bottom: 20px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 14px;
 
@@ -1326,17 +1641,20 @@ blockquote {
 }
 
 
-/* =========================================================
-   PROJECT LINK
-========================================================= */
+.project-content .tags {
+
+    margin-bottom: 20px;
+}
+
 
 .project-link {
 
     display: inline-flex;
 
-    margin-top: 25px;
+    margin-top: 5px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 16px;
 
@@ -1350,7 +1668,8 @@ blockquote {
 
 .project-link:hover {
 
-    color: var(--green-bright);
+    color:
+        var(--green-bright);
 
     transform:
         translateX(5px);
@@ -1438,7 +1757,8 @@ blockquote {
 
     margin-bottom: 8px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-size: 12px;
 
@@ -1452,7 +1772,8 @@ blockquote {
 
     margin-bottom: 5px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 27px;
 }
@@ -1462,7 +1783,8 @@ blockquote {
 
     margin-bottom: 15px;
 
-    color: #b9c8bd;
+    color:
+        #b9c8bd;
 
     font-size: 16px;
 
@@ -1472,7 +1794,8 @@ blockquote {
 
 .timeline-item > p:last-child {
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 16px;
 
@@ -1526,7 +1849,8 @@ blockquote {
 
     border-radius: 14px;
 
-    color: var(--green);
+    color:
+        var(--green);
 
     background:
         rgba(102,255,0,0.05);
@@ -1539,7 +1863,8 @@ blockquote {
 
     margin-bottom: 7px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size: 25px;
 }
@@ -1549,7 +1874,8 @@ blockquote {
 
     margin-bottom: 20px;
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 }
 
 
@@ -1571,15 +1897,13 @@ blockquote {
 
     overflow: hidden;
 
-    padding:
-        70px;
+    padding: 70px;
 
     border:
         1px solid
         var(--green-border);
 
-    border-radius:
-        28px;
+    border-radius: 28px;
 
     background:
         linear-gradient(
@@ -1625,7 +1949,8 @@ blockquote {
 
     margin-bottom: 20px;
 
-    color: var(--text);
+    color:
+        var(--text);
 
     font-size:
         clamp(
@@ -1648,7 +1973,8 @@ blockquote {
 
     margin-bottom: 30px;
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 18px;
 }
@@ -1678,7 +2004,8 @@ blockquote {
 
     gap: 25px;
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 14px;
 }
@@ -1711,7 +2038,8 @@ footer {
 
     gap: 20px;
 
-    color: var(--text-muted);
+    color:
+        var(--text-muted);
 
     font-size: 13px;
 }
@@ -1719,7 +2047,8 @@ footer {
 
 .footer-inner a {
 
-    color: var(--green);
+    color:
+        var(--green);
 
     font-weight: 800;
 
@@ -1992,6 +2321,74 @@ footer {
    MOBILE
 ========================================================= */
 
+@media (max-width: 700px) {
+
+    .story-intro {
+
+        margin-bottom: 50px;
+    }
+
+
+    .story-intro p {
+
+        font-size: 18px;
+    }
+
+
+    .story-timeline::before {
+
+        left: 24px;
+    }
+
+
+    .story-item {
+
+        grid-template-columns:
+            50px 1fr;
+
+        gap: 20px;
+
+        padding-bottom: 55px;
+    }
+
+
+    .story-number {
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 11px;
+    }
+
+
+    .story-content h3 {
+
+        font-size: 30px;
+    }
+
+
+    .story-content p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .story-highlight {
+
+        margin-left: -10px;
+
+        padding:
+            22px
+            10px
+            55px;
+    }
+
+}
+
+
 @media (max-width: 560px) {
 
     .navbar {
@@ -2047,8 +2444,7 @@ footer {
 
         margin-bottom: 25px;
 
-        font-size:
-            34px;
+        font-size: 34px;
     }
 
 
@@ -2087,6 +2483,8 @@ footer {
     .quick-links {
 
         gap: 20px;
+
+        flex-wrap: wrap;
     }
 
 
@@ -2094,8 +2492,7 @@ footer {
 
         height: 500px;
 
-        border-radius:
-            20px;
+        border-radius: 20px;
     }
 
 
@@ -2222,6 +2619,45 @@ footer {
         justify-content: center;
 
         text-align: center;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .story-item {
+
+        grid-template-columns:
+            42px 1fr;
+
+        gap: 16px;
+    }
+
+
+    .story-timeline::before {
+
+        left: 20px;
+    }
+
+
+    .story-number {
+
+        width: 42px;
+
+        height: 42px;
+    }
+
+
+    .story-content h3 {
+
+        font-size: 25px;
+    }
+
+
+    .story-label {
+
+        font-size: 10px;
     }
 
 }
