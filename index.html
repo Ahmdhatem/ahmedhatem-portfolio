@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -18,6 +23,7 @@
         rel="stylesheet"
     >
 </head>
+
 
 <body>
 
@@ -35,17 +41,37 @@
             class="menu-toggle"
             id="menuToggle"
             aria-label="Open navigation"
+            aria-expanded="false"
         >
             ☰
         </button>
 
         <div class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#experience">
+                Experience
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
         </div>
 
     </nav>
@@ -58,6 +84,8 @@
 <section id="home" class="hero">
 
     <div class="container hero-grid">
+
+        <!-- LEFT SIDE -->
 
         <div class="hero-content">
 
@@ -81,23 +109,53 @@
                 software testing, data analysis and machine learning.
             </p>
 
+
+            <!-- USP -->
+
+            <div class="hero-usp">
+
+                <span class="usp-label">
+                    MY USP
+                </span>
+
+                <p>
+                    I bridge hardware and software to build,
+                    test and improve complete engineering systems —
+                    not just individual components.
+                </p>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
             <div class="hero-actions">
 
-                <a href="#projects" class="btn primary">
+                <a
+                    href="#projects"
+                    class="btn primary"
+                >
                     Explore Projects →
                 </a>
 
-                <a href="#contact" class="btn secondary">
+                <a
+                    href="#contact"
+                    class="btn secondary"
+                >
                     Contact Me
                 </a>
 
             </div>
+
+
+            <!-- SOCIAL LINKS -->
 
             <div class="quick-links">
 
                 <a
                     href="https://github.com/Ahmdhatem"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     GitHub
                 </a>
@@ -105,11 +163,14 @@
                 <a
                     href="https://www.linkedin.com/in/ahmeedhatem"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     LinkedIn
                 </a>
 
-                <a href="mailto:ahmeedhatem76@gmail.com">
+                <a
+                    href="mailto:ahmeedhatem76@gmail.com"
+                >
                     Email
                 </a>
 
@@ -118,14 +179,23 @@
         </div>
 
 
+        <!-- RIGHT SIDE -->
+
         <div class="hero-panel">
 
             <div class="profile-card">
 
-                <!-- Replace this with your professional photo -->
-                <div class="profile-placeholder">
+                <img
+                    src="ahmed-portrait.jpg"
+                    alt="Ahmed Hatem"
+                    class="profile-image"
+                >
 
-                    <span>ENGINEERING</span>
+                <div class="profile-overlay">
+
+                    <span>
+                        ENGINEERING
+                    </span>
 
                     <strong>
                         BUILD · TEST · IMPROVE
@@ -144,7 +214,10 @@
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="section section-alt">
+<section
+    id="about"
+    class="section section-alt"
+>
 
     <div class="container narrow">
 
@@ -183,7 +256,10 @@
 
 <!-- ================= SKILLS ================= -->
 
-<section id="skills" class="section">
+<section
+    id="skills"
+    class="section"
+>
 
     <div class="container">
 
@@ -197,6 +273,9 @@
 
 
         <div class="skills-grid">
+
+
+            <!-- AUTOMATION -->
 
             <article class="skill-card">
 
@@ -214,6 +293,7 @@
                 </p>
 
                 <div class="tags">
+
                     <span>PLC</span>
                     <span>TIA Portal</span>
                     <span>Ladder Logic</span>
@@ -221,10 +301,13 @@
                     <span>Analog I/O</span>
                     <span>Sensors</span>
                     <span>Actuators</span>
+
                 </div>
 
             </article>
 
+
+            <!-- SOFTWARE TESTING -->
 
             <article class="skill-card">
 
@@ -242,16 +325,20 @@
                 </p>
 
                 <div class="tags">
+
                     <span>ISTQB</span>
                     <span>Test Design</span>
                     <span>Jira</span>
                     <span>Postman</span>
                     <span>Selenium</span>
                     <span>Static Testing</span>
+
                 </div>
 
             </article>
 
+
+            <!-- PROGRAMMING -->
 
             <article class="skill-card">
 
@@ -269,16 +356,20 @@
                 </p>
 
                 <div class="tags">
+
                     <span>C</span>
                     <span>C++</span>
                     <span>Java</span>
                     <span>Python</span>
                     <span>ROS</span>
                     <span>MATLAB</span>
+
                 </div>
 
             </article>
 
+
+            <!-- DATA & AI -->
 
             <article class="skill-card">
 
@@ -296,12 +387,14 @@
                 </p>
 
                 <div class="tags">
+
                     <span>Scikit-learn</span>
                     <span>TensorFlow</span>
                     <span>OpenCV</span>
                     <span>NumPy</span>
                     <span>Pandas</span>
                     <span>SQL</span>
+
                 </div>
 
             </article>
@@ -331,62 +424,111 @@
         <div class="process">
 
             <div class="process-step">
+
                 <span>01</span>
-                <h3>Understand</h3>
+
+                <h3>
+                    Understand
+                </h3>
+
                 <p>
                     Define the problem and requirements.
                 </p>
+
             </div>
 
+
             <div class="process-step">
+
                 <span>02</span>
-                <h3>Design</h3>
+
+                <h3>
+                    Design
+                </h3>
+
                 <p>
                     Develop the architecture and solution.
                 </p>
+
             </div>
 
+
             <div class="process-step">
+
                 <span>03</span>
-                <h3>Build</h3>
+
+                <h3>
+                    Build
+                </h3>
+
                 <p>
                     Turn the design into a working system.
                 </p>
+
             </div>
 
+
             <div class="process-step">
+
                 <span>04</span>
-                <h3>Integrate</h3>
+
+                <h3>
+                    Integrate
+                </h3>
+
                 <p>
                     Connect hardware and software.
                 </p>
+
             </div>
 
+
             <div class="process-step">
+
                 <span>05</span>
-                <h3>Test</h3>
+
+                <h3>
+                    Test
+                </h3>
+
                 <p>
                     Verify behavior against requirements.
                 </p>
+
             </div>
 
+
             <div class="process-step">
+
                 <span>06</span>
-                <h3>Analyze</h3>
+
+                <h3>
+                    Analyze
+                </h3>
+
                 <p>
                     Find failures and root causes.
                 </p>
+
             </div>
 
+
             <div class="process-step">
+
                 <span>07</span>
-                <h3>Improve</h3>
+
+                <h3>
+                    Improve
+                </h3>
+
                 <p>
                     Iterate toward a better solution.
                 </p>
+
             </div>
 
         </div>
+
 
         <p class="process-note">
             Engineering is an iterative process — every test is feedback.
@@ -399,7 +541,10 @@
 
 <!-- ================= PROJECTS ================= -->
 
-<section id="projects" class="section">
+<section
+    id="projects"
+    class="section"
+>
 
     <div class="container">
 
@@ -415,14 +560,14 @@
         <div class="projects-grid">
 
 
-            <!-- ROBOT -->
+            <!-- ================= ASLR ================= -->
 
             <article class="project-card">
 
                 <div class="project-image">
 
                     <img
-                        src="robot.jpg"
+                        src="Neon Green Autonomous Robot Platform.png"
                         alt="Autonomous Shelf Lift Robot"
                     >
 
@@ -431,6 +576,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="project-content">
 
@@ -452,19 +598,24 @@
                         ★ A+ Graduation Project
                     </div>
 
+
                     <div class="tags">
+
                         <span>ROS1</span>
                         <span>LiDAR</span>
                         <span>EKF</span>
                         <span>Gazebo</span>
                         <span>SLAM</span>
                         <span>BMS</span>
+
                     </div>
+
 
                     <a
                         class="project-link"
                         href="https://www.youtube.com/watch?v=ASLJ3l4_G7o"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Watch project demo →
                     </a>
@@ -474,14 +625,14 @@
             </article>
 
 
-            <!-- AUTOMATED LINE -->
+            <!-- ================= AUTOMATED LINE ================= -->
 
             <article class="project-card">
 
                 <div class="project-image">
 
                     <img
-                        src="production-line.jpg"
+                        src="project.jpeg"
                         alt="Automated Production Line"
                     >
 
@@ -490,6 +641,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="project-content">
 
@@ -511,19 +663,24 @@
                         ⚙ Dual Robotic Arms
                     </div>
 
+
                     <div class="tags">
+
                         <span>PLC</span>
                         <span>Robotics</span>
                         <span>Machine Vision</span>
                         <span>PID</span>
                         <span>SolidWorks</span>
                         <span>MATLAB</span>
+
                     </div>
+
 
                     <a
                         class="project-link"
                         href="https://www.youtube.com/watch?v=vqTFnu-wJDA"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Watch project demo →
                     </a>
@@ -533,14 +690,14 @@
             </article>
 
 
-            <!-- WATER TURBINE -->
+            <!-- ================= WATER TURBINE ================= -->
 
             <article class="project-card">
 
                 <div class="project-image">
 
                     <img
-                        src="water-turbine.jpg"
+                        src="Water Turbine 1.jpeg"
                         alt="Water Turbine Project"
                     >
 
@@ -549,6 +706,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="project-content">
 
@@ -570,17 +728,22 @@
                         ★ 1st Place · 42 Teams · 60% Efficiency
                     </div>
 
+
                     <div class="tags">
+
                         <span>Renewable Energy</span>
                         <span>Mechanical Design</span>
                         <span>Turbine Design</span>
                         <span>Team Leadership</span>
+
                     </div>
+
 
                     <a
                         class="project-link"
                         href="https://www.youtube.com/shorts/mGp3GZjqD4I"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Watch project demo →
                     </a>
@@ -588,6 +751,7 @@
                 </div>
 
             </article>
+
 
         </div>
 
@@ -598,7 +762,10 @@
 
 <!-- ================= EXPERIENCE ================= -->
 
-<section id="experience" class="section section-alt">
+<section
+    id="experience"
+    class="section section-alt"
+>
 
     <div class="container narrow">
 
@@ -613,6 +780,8 @@
 
         <div class="timeline">
 
+
+            <!-- ORASCOM -->
 
             <div class="timeline-item">
 
@@ -640,6 +809,8 @@
             </div>
 
 
+            <!-- DEPI -->
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
@@ -666,6 +837,8 @@
             </div>
 
 
+            <!-- DELOTRANS -->
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
@@ -691,6 +864,7 @@
 
             </div>
 
+
         </div>
 
     </div>
@@ -712,6 +886,7 @@
             Mechatronics Engineering
         </h2>
 
+
         <div class="education-card">
 
             <div class="education-icon">
@@ -729,11 +904,13 @@
                 </p>
 
                 <div class="tags">
+
                     <span>Robotics</span>
                     <span>Automation</span>
                     <span>Control</span>
                     <span>Embedded Systems</span>
                     <span>Mechanical Design</span>
+
                 </div>
 
             </div>
@@ -747,7 +924,10 @@
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact" class="section contact-section">
+<section
+    id="contact"
+    class="section contact-section"
+>
 
     <div class="container">
 
@@ -766,6 +946,7 @@
                 or engineering systems? Feel free to reach out.
             </p>
 
+
             <div class="contact-actions">
 
                 <a
@@ -778,6 +959,7 @@
                 <a
                     href="https://www.linkedin.com/in/ahmeedhatem"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn secondary"
                 >
                     LinkedIn
@@ -786,12 +968,14 @@
                 <a
                     href="https://github.com/Ahmdhatem"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn secondary"
                 >
                     GitHub
                 </a>
 
             </div>
+
 
             <div class="contact-details">
 
@@ -835,26 +1019,52 @@
 
 <script>
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-menuToggle.addEventListener("click", function () {
+    const navLinks =
+        document.getElementById("navLinks");
 
-    navLinks.classList.toggle("open");
 
-});
+    menuToggle.addEventListener(
+        "click",
+        function () {
 
-document.querySelectorAll(".nav-links a").forEach(function (link) {
+            const isOpen =
+                navLinks.classList.toggle("open");
 
-    link.addEventListener("click", function () {
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
 
-        navLinks.classList.remove("open");
+        }
+    );
 
-    });
 
-});
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.remove("open");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
 
 </script>
 
+
 </body>
+
 </html>
