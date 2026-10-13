@@ -1,486 +1,646 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ahmed Hatem - Software Testing / QA Engineer portfolio">
-  <title>Ahmed Hatem | Software Testing / QA Engineer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Youtube,
+  Menu,
+  X,
+  Cpu,
+  Bot,
+  Code2,
+  Database,
+  Wrench,
+  Trophy,
+  MapPin,
+  Download,
+  ArrowUpRight,
+} from "lucide-react";
 
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="#home">Ahmed Hatem</a>
+import "./App.css";
 
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        ☰
-      </button>
+const projects = [
+  {
+    title: "Autonomous Shelf Lift Robot",
+    shortTitle: "ASLR",
+    category: "Graduation Project · A+",
+    image: "/projects/robot.jpg",
+    description:
+      "An autonomous warehouse robot designed for shelf handling, navigation and localization using ROS1, LiDAR and EKF-based sensor fusion.",
+    technologies: [
+      "ROS1",
+      "LiDAR",
+      "EKF",
+      "Gazebo",
+      "SLAM",
+      "Robotics",
+      "BMS",
+    ],
+    achievement: "A+ Graduation Project",
+    youtube: "https://www.youtube.com/watch?v=ASLJ3l4_G7o",
+  },
+  {
+    title: "Fully Automated Production Line",
+    shortTitle: "AUTOMATION",
+    category: "Industrial Automation",
+    image: "/projects/production-line.jpg",
+    description:
+      "A complete automated production line integrating feeding, sorting, assembly and packaging with dual robotic arms and machine vision.",
+    technologies: [
+      "PLC",
+      "Robotics",
+      "Machine Vision",
+      "PID",
+      "SolidWorks",
+      "MATLAB",
+    ],
+    achievement: "Dual Robotic Arms",
+    youtube: "https://www.youtube.com/watch?v=vqTFnu-wJDA",
+  },
+  {
+    title: "Water Turbine",
+    shortTitle: "TURBINE",
+    category: "Competition Project · 1st Place",
+    image: "/projects/water-turbine.jpg",
+    description:
+      "An undershot water turbine developed for a renewable energy competition, achieving 60% efficiency and first place among 42 teams.",
+    technologies: [
+      "Renewable Energy",
+      "Mechanical Design",
+      "Turbine Design",
+      "Team Leadership",
+    ],
+    achievement: "1st Place · 42 Teams · 60% Efficiency",
+    youtube: "https://www.youtube.com/shorts/mGp3GZjqD4I",
+  },
+];
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#process">Process</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+const skills = [
+  {
+    icon: <Bot size={22} />,
+    title: "Automation & PLC",
+    description:
+      "Industrial automation and control systems with PLC programming and Siemens TIA Portal.",
+    tags: [
+      "PLC",
+      "TIA Portal",
+      "Ladder Logic",
+      "Digital I/O",
+      "Analog I/O",
+      "Sensors",
+      "Actuators",
+    ],
+  },
+  {
+    icon: <Code2 size={22} />,
+    title: "Software Testing",
+    description:
+      "Software testing fundamentals with practical experience in manual testing and automation tools.",
+    tags: [
+      "ISTQB",
+      "Test Design",
+      "Jira",
+      "Postman",
+      "Selenium",
+      "Static Testing",
+    ],
+  },
+  {
+    icon: <Cpu size={22} />,
+    title: "Programming & Embedded",
+    description:
+      "Programming and embedded systems development across multiple languages and platforms.",
+    tags: ["C", "C++", "Java", "Python", "ROS", "MATLAB"],
+  },
+  {
+    icon: <Database size={22} />,
+    title: "Data & AI",
+    description:
+      "Machine learning, data analysis and computer vision experience.",
+    tags: [
+      "Scikit-learn",
+      "TensorFlow",
+      "OpenCV",
+      "NumPy",
+      "Pandas",
+      "SQL",
+    ],
+  },
+];
 
-  <main>
+const experience = [
+  {
+    date: "Sep 2026 — Present",
+    title: "Technical Office Engineer",
+    company: "Orascom Services",
+    description:
+      "Research Volvo Penta parts catalogs and technical documentation, review engine components and service requirements, and support Spare Parts Operations with technical information and parts requirements.",
+  },
+  {
+    date: "Aug 2026 — Present",
+    title: "Software Tester Intern",
+    company: "DEPI",
+    description:
+      "Completing an ISTQB v4-aligned testing track while practicing static testing, Jira, Postman, Selenium, test analysis and design, Java fundamentals and Agile testing activities.",
+  },
+  {
+    date: "Aug 2025 — Aug 2026",
+    title: "Logistics Specialist",
+    company: "Delotrans Inc.",
+    description:
+      "Managed compliance operations for a fleet of 255 trucks under U.S. DOT regulations, supported GTG/PTI processing for 8,800+ drivers and installed/configured 100+ ELD systems.",
+  },
+];
 
-    <!-- HERO -->
-    <section id="home" class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Software Testing • QA • API • Automation</p>
-          <h1>Ahmed Hatem</h1>
-          <h2>Software Testing / QA Engineer</h2>
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-          <p class="hero-lead">
-            I combine an engineering problem-solving mindset with hands-on software testing
-            skills to understand how systems should work, identify where they can fail,
-            and help teams deliver reliable, high-quality software.
-          </p>
+  const closeMenu = () => setMenuOpen(false);
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#projects">View My Work</a>
-            <a class="btn secondary" href="mailto:ahmeedhatem76@gmail.com">Contact Me</a>
+  return (
+    <div className="app">
+      {/* NAVIGATION */}
+      <header className="site-header">
+        <nav className="navbar container">
+          <a href="#home" className="brand" onClick={closeMenu}>
+            Ahmed Hatem
+          </a>
+
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+
+          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <a href="#home" onClick={closeMenu}>
+              Home
+            </a>
+            <a href="#about" onClick={closeMenu}>
+              About
+            </a>
+            <a href="#skills" onClick={closeMenu}>
+              Skills
+            </a>
+            <a href="#projects" onClick={closeMenu}>
+              Projects
+            </a>
+            <a href="#experience" onClick={closeMenu}>
+              Experience
+            </a>
+            <a href="#contact" onClick={closeMenu}>
+              Contact
+            </a>
           </div>
+        </nav>
+      </header>
 
-          <div class="quick-links" aria-label="Social links">
-            <a href="http://www.linkedin.com/in/ahmeedhatem" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.github.com/Ahmdhatem" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {/* HERO */}
+      <main>
+        <section id="home" className="hero">
+          <div className="hero-grid container">
+            <motion.div
+              className="hero-content"
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <p className="eyebrow">
+                Mechatronics Engineer · Software Testing · Automation
+              </p>
+
+              <h1>
+                AHMED
+                <br />
+                HATEM
+              </h1>
+
+              <h2>
+                Engineering systems.
+                <br />
+                Building solutions.
+              </h2>
+
+              <p className="hero-lead">
+                Mechatronics Engineer with hands-on experience across
+                industrial automation, robotics, embedded systems, software
+                testing, data analysis and machine learning.
+              </p>
+
+              <div className="hero-actions">
+                <a href="#projects" className="btn primary">
+                  Explore Projects
+                  <ArrowUpRight size={17} />
+                </a>
+
+                <a href="#contact" className="btn secondary">
+                  Contact Me
+                </a>
+              </div>
+
+              <div className="quick-links">
+                <a
+                  href="https://github.com/Ahmdhatem"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/ahmeedhatem"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
+
+                <a href="mailto:ahmeedhatem76@gmail.com">Email</a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="hero-panel"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+            >
+              <div className="portrait-card">
+                <img
+                  src="/projects/robot.jpg"
+                  alt="Autonomous Shelf Lift Robot"
+                />
+
+                <div className="portrait-overlay">
+                  <span>ENGINEERING</span>
+                  <strong>BUILD · TEST · IMPROVE</strong>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </section>
 
-        <div class="hero-panel">
-          <div class="portrait-card">
-            <img src="./ahmed-portrait.jpg?v=2" alt="Ahmed Hatem portrait"> 
-          </div>
-        </div>
-      </div>
-    </section>
+        {/* ABOUT */}
+        <section id="about" className="section section-alt">
+          <div className="container narrow">
+            <p className="section-kicker">01 · About</p>
 
-    <!-- ABOUT -->
-    <section id="about" class="section section-alt">
-      <div class="container narrow">
-        <p class="section-kicker">About Me</p>
-        <h2 class="section-title">From Engineering Systems to Software Quality</h2>
+            <h2 className="section-title">
+              From mechanical systems to software.
+            </h2>
 
-        <p>
-          I’m Ahmed Hatem, a Mechatronics Engineer who developed a strong interest in
-          software quality through programming, embedded systems, robotics, automation,
-          and complex engineering systems. My engineering background trained me to
-          understand how systems should behave, investigate failures, analyze problems,
-          and validate results.
-        </p>
-
-        <p>
-          I now apply that mindset to software testing through requirements analysis,
-          test design, defect reporting, API testing, database testing, and automation.
-          I focus on clear evidence, reproducible defects, risk-based thinking, and
-          reliable validation throughout the software development process.
-        </p>
-
-        <blockquote>
-          “Today, I use my engineering mindset to find defects, reduce software risks,
-          and help teams deliver reliable products.”
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <div class="container">
-        <p class="section-kicker">Core Capabilities</p>
-        <h2 class="section-title">Software Testing Skills</h2>
-
-        <div class="skills-grid">
-
-          <article class="skill-card">
-            <div class="icon">✓</div>
-            <h3>Manual Testing</h3>
-            <div class="tags">
-              <span>Functional Testing</span>
-              <span>Regression Testing</span>
-              <span>Smoke Testing</span>
-              <span>System Testing</span>
-              <span>Integration Testing</span>
-              <span>Acceptance Testing</span>
-              <span>Exploratory Testing</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <div class="icon">T</div>
-            <h3>Test Design</h3>
-            <div class="tags">
-              <span>Requirements Analysis</span>
-              <span>Test Scenarios</span>
-              <span>Test Cases</span>
-              <span>Positive Testing</span>
-              <span>Negative Testing</span>
-              <span>Static Testing</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <div class="icon">{ }</div>
-            <h3>API & Database</h3>
-            <div class="tags">
-              <span>Postman</span>
-              <span>REST APIs</span>
-              <span>Status Codes</span>
-              <span>JSON Validation</span>
-              <span>SQL</span>
-              <span>Database Validation</span>
-              <span>Data Verification</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <div class="icon">A</div>
-            <h3>Automation</h3>
-            <div class="tags">
-              <span>Selenium</span>
-              <span>Java</span>
-              <span>Python</span>
-              <span>Web Automation</span>
-              <span>Assertions</span>
-              <span>Reusable Test Logic</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <div class="icon">⚙</div>
-            <h3>Tools & Methodologies</h3>
-            <div class="tags">
-              <span>Jira</span>
-              <span>Agile</span>
-              <span>SDLC</span>
-              <span>STLC</span>
-              <span>ISTQB Concepts</span>
-              <span>Test Documentation</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <div class="icon">E</div>
-            <h3>Engineering Foundation</h3>
-            <div class="tags">
-              <span>Mechatronics</span>
-              <span>Robotics</span>
-              <span>Embedded Systems</span>
-              <span>Automation</span>
-              <span>Control Systems</span>
-              <span>Machine Vision</span>
-              <span>MATLAB</span>
-              <span>ROS</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section section-alt">
-      <div class="container">
-        <p class="section-kicker">Testing Process</p>
-        <h2 class="section-title">How I Approach Software Testing</h2>
-
-        <div class="process">
-          <div class="process-step"><span>01</span><h3>Understand Requirements</h3><p>Clarify expected behavior, acceptance criteria, and business rules.</p></div>
-          <div class="process-step"><span>02</span><h3>Identify Risks</h3><p>Prioritize critical workflows, edge cases, and failure-prone areas.</p></div>
-          <div class="process-step"><span>03</span><h3>Design Tests</h3><p>Create clear scenarios, positive/negative cases, and traceable test cases.</p></div>
-          <div class="process-step"><span>04</span><h3>Execute</h3><p>Test systematically and compare actual behavior with expected results.</p></div>
-          <div class="process-step"><span>05</span><h3>Report Defects</h3><p>Document reproducible bugs with evidence, severity, priority, and clear steps.</p></div>
-          <div class="process-step"><span>06</span><h3>Retest & Regress</h3><p>Verify fixes and confirm that existing functionality remains stable.</p></div>
-          <div class="process-step"><span>07</span><h3>Final Validation</h3><p>Confirm the product satisfies requirements and is ready for release.</p></div>
-        </div>
-
-        <p class="process-note">
-          My goal is not only to find bugs, but to understand why they happen and help prevent them from reaching users.
-        </p>
-      </div>
-    </section>
-
-    <!-- TESTING AREAS -->
-    <section class="section">
-      <div class="container">
-        <p class="section-kicker">Testing Areas</p>
-        <h2 class="section-title">From UI to API to Database</h2>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <p class="feature-label">01</p>
-            <h3>Manual Testing & QA</h3>
             <p>
-              Requirements analysis, test scenarios, test cases, functional testing,
-              regression testing, exploratory testing, and structured defect reporting.
-            </p>
-
-            <div class="mini-table">
-              <div><strong>Test Case</strong><span>TC-LOGIN-001</span></div>
-              <div><strong>Scenario</strong><span>Valid login</span></div>
-              <div><strong>Expected</strong><span>Dashboard opens</span></div>
-              <div><strong>Status</strong><span class="status-pass">PASS</span></div>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <p class="feature-label">02</p>
-            <h3>API Testing with Postman</h3>
-            <p>
-              Validate backend behavior through GET, POST, PUT, and DELETE requests,
-              status codes, headers, parameters, JSON responses, negative cases, and error handling.
-            </p>
-
-            <div class="api-flow">
-              <span>Request</span>
-              <strong>→</strong>
-              <span>API</span>
-              <strong>→</strong>
-              <span>Response</span>
-              <strong>→</strong>
-              <span>Validation</span>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <p class="feature-label">03</p>
-            <h3>Database Testing & SQL</h3>
-            <p>
-              Validate inserted and updated records, identify missing or inconsistent data,
-              and compare application/API results with backend database values.
-            </p>
-
-            <div class="code-box">
-              <code>SELECT * FROM users<br>WHERE status = 'active';</code>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <p class="feature-label">04</p>
-            <h3>Automation with Selenium</h3>
-            <p>
-              Build repeatable browser tests using Selenium and Java/Python for stable,
-              repetitive workflows and faster regression testing.
-            </p>
-
-            <div class="automation-flow">
-              <span>Manual</span><strong>→</strong><span>Stable Scenario</span><strong>→</strong><span>Automate</span><strong>→</strong><span>Regress Faster</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section section-alt">
-      <div class="container">
-        <p class="section-kicker">Featured Work</p>
-        <h2 class="section-title">Software Testing Projects</h2>
-
-        <div class="projects-grid">
-
-          <article class="project-card">
-            <div class="project-visual">WEB APP</div>
-            <div class="project-content">
-              <h3>Web Application Testing</h3>
-              <p>
-                Designed and executed functional test scenarios and test cases,
-                documented defects, performed regression testing, and validated
-                expected application behavior.
-              </p>
-              <div class="tags">
-                <span>Manual Testing</span>
-                <span>Jira</span>
-                <span>Test Cases</span>
-                <span>Bug Reporting</span>
-              </div>
-              <a href="https://www.github.com/Ahmdhatem" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-visual">API</div>
-            <div class="project-content">
-              <h3>API Testing</h3>
-              <p>
-                Tested REST APIs using Postman, including status codes,
-                response validation, JSON data, negative scenarios, and error handling.
-              </p>
-              <div class="tags">
-                <span>Postman</span>
-                <span>REST API</span>
-                <span>JSON</span>
-              </div>
-              <a href="https://www.github.com/Ahmdhatem" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-visual">SELENIUM</div>
-            <div class="project-content">
-              <h3>Automation Testing</h3>
-              <p>
-                Automated repeatable web testing scenarios using Selenium and Java,
-                focusing on browser interaction, validation, and regression support.
-              </p>
-              <div class="tags">
-                <span>Selenium</span>
-                <span>Java</span>
-                <span>Automation</span>
-              </div>
-              <a href="https://www.github.com/Ahmdhatem" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ENGINEERING ADVANTAGE -->
-    <section class="section">
-      <div class="container">
-        <p class="section-kicker">My Advantage</p>
-        <h2 class="section-title">Why Engineering Makes My Testing Approach Different</h2>
-
-        <div class="advantage-grid">
-          <div>
-            <p>
-              My Mechatronics Engineering background gives me a structured and analytical
-              way of testing software. I think in terms of system behavior, interfaces,
-              failure points, dependencies, and risk—not only individual screens or features.
+              I am a Mechatronics Engineering graduate from Ain Shams
+              University with practical experience spanning robotics,
+              industrial automation, embedded systems, software testing and
+              data-driven engineering.
             </p>
 
             <p>
-              Experience with robotics, embedded systems, automation, and technical operations
-              strengthened my root-cause thinking, attention to detail, documentation,
-              programming knowledge, and ability to work with complex systems.
+              My approach combines hardware understanding with software
+              development and structured problem solving. I enjoy working on
+              systems where mechanical, electrical and software components have
+              to work together reliably.
             </p>
 
             <blockquote>
-              “I approach software the same way I approach an engineering system:
-              understand how it should work, identify failure points, test them systematically,
-              and verify the result.”
+              I don't just build a system. I test it, understand why it
+              behaves the way it does, and improve it.
             </blockquote>
           </div>
+        </section>
 
-          <div class="pipeline">
-            <div>Requirements</div>
-            <span>↓</span>
-            <div>System Behavior</div>
-            <span>↓</span>
-            <div>Failure Analysis</div>
-            <span>↓</span>
-            <div>Testing</div>
-            <span>↓</span>
-            <div>Quality</div>
+        {/* SKILLS */}
+        <section id="skills" className="section">
+          <div className="container">
+            <p className="section-kicker">02 · Technical Skills</p>
+
+            <h2 className="section-title">
+              A multidisciplinary engineering toolkit.
+            </h2>
+
+            <div className="skills-grid">
+              {skills.map((skill, index) => (
+                <motion.article
+                  className="skill-card"
+                  key={skill.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                >
+                  <div className="icon">{skill.icon}</div>
+
+                  <h3>{skill.title}</h3>
+
+                  <p>{skill.description}</p>
+
+                  <div className="tags">
+                    {skill.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section section-alt">
-      <div class="container">
-        <p class="section-kicker">Background</p>
-        <h2 class="section-title">Education & Experience</h2>
+        {/* ENGINEERING APPROACH */}
+        <section className="section section-alt">
+          <div className="container">
+            <p className="section-kicker">03 · Engineering Approach</p>
 
-        <div class="timeline">
+            <h2 className="section-title">
+              Design → Build → Test → Improve
+            </h2>
 
-          <article class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div>
-              <p class="timeline-label">Education</p>
-              <h3>B.Sc. in Mechatronics Engineering</h3>
-              <p>Ain Shams University</p>
+            <div className="process">
+              {[
+                ["01", "Understand", "Define the problem and requirements."],
+                ["02", "Design", "Develop the architecture and solution."],
+                ["03", "Build", "Turn the design into a working system."],
+                ["04", "Integrate", "Connect hardware and software."],
+                ["05", "Test", "Verify behavior against requirements."],
+                ["06", "Analyze", "Find failures and root causes."],
+                ["07", "Improve", "Iterate toward a better solution."],
+              ].map(([number, title, text]) => (
+                <div className="process-step" key={number}>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
-          </article>
 
-          <article class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div>
-              <p class="timeline-label">Software Testing</p>
-              <h3>DEPI Software Testing Training</h3>
+            <p className="process-note">
+              Engineering is an iterative process — every test is feedback.
+            </p>
+          </div>
+        </section>
+
+        {/* PROJECTS */}
+        <section id="projects" className="section">
+          <div className="container">
+            <p className="section-kicker">04 · Selected Projects</p>
+
+            <h2 className="section-title">
+              Real systems. Real hardware. Real results.
+            </h2>
+
+            <div className="projects-grid">
+              {projects.map((project, index) => (
+                <motion.article
+                  className="project-card"
+                  key={project.title}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="project-visual">
+                    <img src={project.image} alt={project.title} />
+
+                    <div className="project-badge">
+                      {project.shortTitle}
+                    </div>
+                  </div>
+
+                  <div className="project-content">
+                    <p className="project-category">
+                      {project.category}
+                    </p>
+
+                    <h3>{project.title}</h3>
+
+                    <p>{project.description}</p>
+
+                    <div className="project-achievement">
+                      <Trophy size={16} />
+                      <span>{project.achievement}</span>
+                    </div>
+
+                    <div className="tags">
+                      {project.technologies.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+
+                    <a
+                      href={project.youtube}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-link"
+                    >
+                      Watch project demo
+                      <Youtube size={17} />
+                    </a>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROJECT DETAILS */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="feature-grid">
+              <div className="feature-card">
+                <p className="feature-label">AUTONOMOUS ROBOT</p>
+
+                <h3>Robotics & Autonomous Navigation</h3>
+
+                <p>
+                  The ASLR combines LiDAR-based perception, EKF sensor fusion,
+                  autonomous navigation and localization with a custom lifting
+                  mechanism and charging/BMS system.
+                </p>
+
+                <div className="mini-table">
+                  <div>
+                    <strong>Platform</strong>
+                    <span>ROS1</span>
+                  </div>
+
+                  <div>
+                    <strong>Simulation</strong>
+                    <span>Gazebo</span>
+                  </div>
+
+                  <div>
+                    <strong>Perception</strong>
+                    <span>LiDAR</span>
+                  </div>
+
+                  <div>
+                    <strong>Fusion</strong>
+                    <span>EKF</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="feature-card">
+                <p className="feature-label">AUTOMATION</p>
+
+                <h3>Industrial Production Line</h3>
+
+                <p>
+                  A physical automated production system integrating robotic
+                  manipulation, machine vision, positioning and industrial
+                  control concepts.
+                </p>
+
+                <div className="automation-flow">
+                  <span>Feed</span>
+                  <strong>→</strong>
+                  <span>Sort</span>
+                  <strong>→</strong>
+                  <span>Assemble</span>
+                  <strong>→</strong>
+                  <span>Package</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* EXPERIENCE */}
+        <section id="experience" className="section">
+          <div className="container narrow">
+            <p className="section-kicker">05 · Experience</p>
+
+            <h2 className="section-title">
+              Experience across engineering and technology.
+            </h2>
+
+            <div className="timeline">
+              {experience.map((item) => (
+                <div className="timeline-item" key={item.title}>
+                  <div className="timeline-dot" />
+
+                  <p className="timeline-label">{item.date}</p>
+
+                  <h3>{item.title}</h3>
+
+                  <p className="timeline-company">{item.company}</p>
+
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EDUCATION */}
+        <section className="section section-alt">
+          <div className="container narrow">
+            <p className="section-kicker">06 · Education</p>
+
+            <h2 className="section-title">
+              Mechatronics Engineering
+            </h2>
+
+            <div className="education-card">
+              <div className="education-icon">
+                <Wrench size={24} />
+              </div>
+
+              <div>
+                <h3>Ain Shams University</h3>
+
+                <p>
+                  B.Sc. in Mechatronics Engineering · 2020 — 2025
+                </p>
+
+                <div className="tags">
+                  <span>Robotics</span>
+                  <span>Automation</span>
+                  <span>Control</span>
+                  <span>Embedded Systems</span>
+                  <span>Mechanical Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" className="section contact-section">
+          <div className="container">
+            <div className="contact-card">
+              <p className="section-kicker">07 · Contact</p>
+
+              <h2>Let's build something useful.</h2>
+
               <p>
-                Hands-on development in test analysis, test design, bug reporting,
-                API testing, database validation, Selenium, Jira, Postman, Java,
-                Agile, and ISTQB concepts.
+                Interested in software testing, automation, robotics or
+                engineering systems? Feel free to reach out.
               </p>
+
+              <div className="contact-actions">
+                <a
+                  href="mailto:ahmeedhatem76@gmail.com"
+                  className="btn primary"
+                >
+                  <Mail size={18} />
+                  Email Me
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/ahmeedhatem"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn secondary"
+                >
+                  <Linkedin size={18} />
+                  LinkedIn
+                </a>
+
+                <a
+                  href="https://github.com/Ahmdhatem"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn secondary"
+                >
+                  <Github size={18} />
+                  GitHub
+                </a>
+              </div>
+
+              <div className="contact-details">
+                <span>
+                  <MapPin size={15} />
+                  Cairo, Egypt
+                </span>
+
+                <span>
+                  <Mail size={15} />
+                  ahmeedhatem76@gmail.com
+                </span>
+              </div>
             </div>
-          </article>
+          </div>
+        </section>
+      </main>
 
-          <article class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div>
-              <p class="timeline-label">Current Role</p>
-              <h3>Technical Office Engineer – Engines & Spare Parts</h3>
-              <p>Orascom Services</p>
-              <p>
-                Applying technical analysis, documentation, accuracy, problem-solving,
-                requirements understanding, and complex-system thinking in a practical engineering environment.
-              </p>
-            </div>
-          </article>
+      {/* FOOTER */}
+      <footer>
+        <div className="container footer-inner">
+          <span>
+            © {new Date().getFullYear()} Ahmed Hatem. All rights reserved.
+          </span>
 
+          <a href="#home">Back to top ↑</a>
         </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
-      <div class="container contact-card">
-        <p class="section-kicker">Let’s Connect</p>
-        <h2>Ready to build more reliable software?</h2>
-        <p>
-          Looking for someone who combines technical thinking, attention to detail,
-          and a quality-focused mindset? Let’s connect.
-        </p>
-
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:ahmeedhatem76@gmail.com">Email Me</a>
-          <a class="btn secondary" href="http://www.linkedin.com/in/ahmeedhatem" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="btn secondary" href="https://www.github.com/Ahmdhatem" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn secondary" href="tel:+201023363215">Call Me</a>
-        </div>
-
-        <div class="contact-details">
-          <span>ahmeedhatem76@gmail.com</span>
-          <span>+201023363215</span>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <p>© 2026 Ahmed Hatem</p>
-      <a href="#home">Back to top ↑</a>
+      </footer>
     </div>
-  </footer>
+  );
+}
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
-</body>
-</html>
+export default App;
