@@ -1,646 +1,860 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  ExternalLink,
-  Youtube,
-  Menu,
-  X,
-  Cpu,
-  Bot,
-  Code2,
-  Database,
-  Wrench,
-  Trophy,
-  MapPin,
-  Download,
-  ArrowUpRight,
-} from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-import "./App.css";
+    <meta
+        name="description"
+        content="Ahmed Hatem - Mechatronics Engineer, Software Testing, Automation and Robotics Portfolio"
+    >
 
-const projects = [
-  {
-    title: "Autonomous Shelf Lift Robot",
-    shortTitle: "ASLR",
-    category: "Graduation Project · A+",
-    image: "/projects/robot.jpg",
-    description:
-      "An autonomous warehouse robot designed for shelf handling, navigation and localization using ROS1, LiDAR and EKF-based sensor fusion.",
-    technologies: [
-      "ROS1",
-      "LiDAR",
-      "EKF",
-      "Gazebo",
-      "SLAM",
-      "Robotics",
-      "BMS",
-    ],
-    achievement: "A+ Graduation Project",
-    youtube: "https://www.youtube.com/watch?v=ASLJ3l4_G7o",
-  },
-  {
-    title: "Fully Automated Production Line",
-    shortTitle: "AUTOMATION",
-    category: "Industrial Automation",
-    image: "/projects/production-line.jpg",
-    description:
-      "A complete automated production line integrating feeding, sorting, assembly and packaging with dual robotic arms and machine vision.",
-    technologies: [
-      "PLC",
-      "Robotics",
-      "Machine Vision",
-      "PID",
-      "SolidWorks",
-      "MATLAB",
-    ],
-    achievement: "Dual Robotic Arms",
-    youtube: "https://www.youtube.com/watch?v=vqTFnu-wJDA",
-  },
-  {
-    title: "Water Turbine",
-    shortTitle: "TURBINE",
-    category: "Competition Project · 1st Place",
-    image: "/projects/water-turbine.jpg",
-    description:
-      "An undershot water turbine developed for a renewable energy competition, achieving 60% efficiency and first place among 42 teams.",
-    technologies: [
-      "Renewable Energy",
-      "Mechanical Design",
-      "Turbine Design",
-      "Team Leadership",
-    ],
-    achievement: "1st Place · 42 Teams · 60% Efficiency",
-    youtube: "https://www.youtube.com/shorts/mGp3GZjqD4I",
-  },
-];
+    <title>Ahmed Hatem | Engineering Portfolio</title>
 
-const skills = [
-  {
-    icon: <Bot size={22} />,
-    title: "Automation & PLC",
-    description:
-      "Industrial automation and control systems with PLC programming and Siemens TIA Portal.",
-    tags: [
-      "PLC",
-      "TIA Portal",
-      "Ladder Logic",
-      "Digital I/O",
-      "Analog I/O",
-      "Sensors",
-      "Actuators",
-    ],
-  },
-  {
-    icon: <Code2 size={22} />,
-    title: "Software Testing",
-    description:
-      "Software testing fundamentals with practical experience in manual testing and automation tools.",
-    tags: [
-      "ISTQB",
-      "Test Design",
-      "Jira",
-      "Postman",
-      "Selenium",
-      "Static Testing",
-    ],
-  },
-  {
-    icon: <Cpu size={22} />,
-    title: "Programming & Embedded",
-    description:
-      "Programming and embedded systems development across multiple languages and platforms.",
-    tags: ["C", "C++", "Java", "Python", "ROS", "MATLAB"],
-  },
-  {
-    icon: <Database size={22} />,
-    title: "Data & AI",
-    description:
-      "Machine learning, data analysis and computer vision experience.",
-    tags: [
-      "Scikit-learn",
-      "TensorFlow",
-      "OpenCV",
-      "NumPy",
-      "Pandas",
-      "SQL",
-    ],
-  },
-];
+    <link rel="stylesheet" href="style.css">
 
-const experience = [
-  {
-    date: "Sep 2026 — Present",
-    title: "Technical Office Engineer",
-    company: "Orascom Services",
-    description:
-      "Research Volvo Penta parts catalogs and technical documentation, review engine components and service requirements, and support Spare Parts Operations with technical information and parts requirements.",
-  },
-  {
-    date: "Aug 2026 — Present",
-    title: "Software Tester Intern",
-    company: "DEPI",
-    description:
-      "Completing an ISTQB v4-aligned testing track while practicing static testing, Jira, Postman, Selenium, test analysis and design, Java fundamentals and Agile testing activities.",
-  },
-  {
-    date: "Aug 2025 — Aug 2026",
-    title: "Logistics Specialist",
-    company: "Delotrans Inc.",
-    description:
-      "Managed compliance operations for a fleet of 255 trucks under U.S. DOT regulations, supported GTG/PTI processing for 8,800+ drivers and installed/configured 100+ ELD systems.",
-  },
-];
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+</head>
 
-function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+<body>
 
-  const closeMenu = () => setMenuOpen(false);
+<!-- ================= HEADER ================= -->
 
-  return (
-    <div className="app">
-      {/* NAVIGATION */}
-      <header className="site-header">
-        <nav className="navbar container">
-          <a href="#home" className="brand" onClick={closeMenu}>
-            Ahmed Hatem
-          </a>
+<header class="site-header">
 
-          <button
-            className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+    <nav class="navbar">
 
-          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-            <a href="#home" onClick={closeMenu}>
-              Home
-            </a>
-            <a href="#about" onClick={closeMenu}>
-              About
-            </a>
-            <a href="#skills" onClick={closeMenu}>
-              Skills
-            </a>
-            <a href="#projects" onClick={closeMenu}>
-              Projects
-            </a>
-            <a href="#experience" onClick={closeMenu}>
-              Experience
-            </a>
-            <a href="#contact" onClick={closeMenu}>
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
+        <a href="#home" class="brand">
+            AHMED HATEM
+        </a>
 
-      {/* HERO */}
-      <main>
-        <section id="home" className="hero">
-          <div className="hero-grid container">
-            <motion.div
-              className="hero-content"
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <p className="eyebrow">
-                Mechatronics Engineer · Software Testing · Automation
-              </p>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
 
-              <h1>
-                AHMED
-                <br />
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                MECHATRONICS ENGINEER · SOFTWARE TESTING · AUTOMATION
+            </p>
+
+            <h1>
+                AHMED<br>
                 HATEM
-              </h1>
+            </h1>
 
-              <h2>
-                Engineering systems.
-                <br />
+            <h2>
+                Engineering systems.<br>
                 Building solutions.
-              </h2>
+            </h2>
 
-              <p className="hero-lead">
+            <p class="hero-lead">
                 Mechatronics Engineer with hands-on experience across
-                industrial automation, robotics, embedded systems, software
-                testing, data analysis and machine learning.
-              </p>
-
-              <div className="hero-actions">
-                <a href="#projects" className="btn primary">
-                  Explore Projects
-                  <ArrowUpRight size={17} />
-                </a>
-
-                <a href="#contact" className="btn secondary">
-                  Contact Me
-                </a>
-              </div>
-
-              <div className="quick-links">
-                <a
-                  href="https://github.com/Ahmdhatem"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/ahmeedhatem"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn
-                </a>
-
-                <a href="mailto:ahmeedhatem76@gmail.com">Email</a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hero-panel"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-            >
-              <div className="portrait-card">
-                <img
-                  src="/projects/robot.jpg"
-                  alt="Autonomous Shelf Lift Robot"
-                />
-
-                <div className="portrait-overlay">
-                  <span>ENGINEERING</span>
-                  <strong>BUILD · TEST · IMPROVE</strong>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ABOUT */}
-        <section id="about" className="section section-alt">
-          <div className="container narrow">
-            <p className="section-kicker">01 · About</p>
-
-            <h2 className="section-title">
-              From mechanical systems to software.
-            </h2>
-
-            <p>
-              I am a Mechatronics Engineering graduate from Ain Shams
-              University with practical experience spanning robotics,
-              industrial automation, embedded systems, software testing and
-              data-driven engineering.
+                robotics, industrial automation, embedded systems,
+                software testing, data analysis and machine learning.
             </p>
 
-            <p>
-              My approach combines hardware understanding with software
-              development and structured problem solving. I enjoy working on
-              systems where mechanical, electrical and software components have
-              to work together reliably.
-            </p>
+            <div class="hero-actions">
 
-            <blockquote>
-              I don't just build a system. I test it, understand why it
-              behaves the way it does, and improve it.
-            </blockquote>
-          </div>
-        </section>
+                <a href="#projects" class="btn primary">
+                    Explore Projects →
+                </a>
 
-        {/* SKILLS */}
-        <section id="skills" className="section">
-          <div className="container">
-            <p className="section-kicker">02 · Technical Skills</p>
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
 
-            <h2 className="section-title">
-              A multidisciplinary engineering toolkit.
-            </h2>
-
-            <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <motion.article
-                  className="skill-card"
-                  key={skill.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.08 }}
-                >
-                  <div className="icon">{skill.icon}</div>
-
-                  <h3>{skill.title}</h3>
-
-                  <p>{skill.description}</p>
-
-                  <div className="tags">
-                    {skill.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ENGINEERING APPROACH */}
-        <section className="section section-alt">
-          <div className="container">
-            <p className="section-kicker">03 · Engineering Approach</p>
-
-            <h2 className="section-title">
-              Design → Build → Test → Improve
-            </h2>
-
-            <div className="process">
-              {[
-                ["01", "Understand", "Define the problem and requirements."],
-                ["02", "Design", "Develop the architecture and solution."],
-                ["03", "Build", "Turn the design into a working system."],
-                ["04", "Integrate", "Connect hardware and software."],
-                ["05", "Test", "Verify behavior against requirements."],
-                ["06", "Analyze", "Find failures and root causes."],
-                ["07", "Improve", "Iterate toward a better solution."],
-              ].map(([number, title, text]) => (
-                <div className="process-step" key={number}>
-                  <span>{number}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </div>
-              ))}
             </div>
 
-            <p className="process-note">
-              Engineering is an iterative process — every test is feedback.
-            </p>
-          </div>
-        </section>
+            <div class="quick-links">
 
-        {/* PROJECTS */}
-        <section id="projects" className="section">
-          <div className="container">
-            <p className="section-kicker">04 · Selected Projects</p>
-
-            <h2 className="section-title">
-              Real systems. Real hardware. Real results.
-            </h2>
-
-            <div className="projects-grid">
-              {projects.map((project, index) => (
-                <motion.article
-                  className="project-card"
-                  key={project.title}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                <a
+                    href="https://github.com/Ahmdhatem"
+                    target="_blank"
                 >
-                  <div className="project-visual">
-                    <img src={project.image} alt={project.title} />
+                    GitHub
+                </a>
 
-                    <div className="project-badge">
-                      {project.shortTitle}
+                <a
+                    href="https://www.linkedin.com/in/ahmeedhatem"
+                    target="_blank"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="mailto:ahmeedhatem76@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-panel">
+
+            <div class="profile-card">
+
+                <!-- Replace this with your professional photo -->
+                <div class="profile-placeholder">
+
+                    <span>ENGINEERING</span>
+
+                    <strong>
+                        BUILD · TEST · IMPROVE
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section section-alt">
+
+    <div class="container narrow">
+
+        <p class="section-kicker">
+            01 · ABOUT
+        </p>
+
+        <h2 class="section-title">
+            From mechanical systems<br>
+            to software.
+        </h2>
+
+        <p>
+            I am a Mechatronics Engineering graduate from Ain Shams
+            University with practical experience spanning robotics,
+            industrial automation, embedded systems, software testing
+            and data-driven engineering.
+        </p>
+
+        <p>
+            My approach combines hardware understanding with software
+            development and structured problem solving. I enjoy working
+            on systems where mechanical, electrical and software
+            components have to work together reliably.
+        </p>
+
+        <blockquote>
+            I don't just build a system. I test it, understand why it
+            behaves the way it does, and improve it.
+        </blockquote>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section">
+
+    <div class="container">
+
+        <p class="section-kicker">
+            02 · TECHNICAL SKILLS
+        </p>
+
+        <h2 class="section-title">
+            A multidisciplinary engineering toolkit.
+        </h2>
+
+
+        <div class="skills-grid">
+
+            <article class="skill-card">
+
+                <div class="skill-icon">
+                    PLC
+                </div>
+
+                <h3>
+                    Automation & PLC
+                </h3>
+
+                <p>
+                    Industrial automation and control systems with PLC
+                    programming and Siemens TIA Portal.
+                </p>
+
+                <div class="tags">
+                    <span>PLC</span>
+                    <span>TIA Portal</span>
+                    <span>Ladder Logic</span>
+                    <span>Digital I/O</span>
+                    <span>Analog I/O</span>
+                    <span>Sensors</span>
+                    <span>Actuators</span>
+                </div>
+
+            </article>
+
+
+            <article class="skill-card">
+
+                <div class="skill-icon">
+                    QA
+                </div>
+
+                <h3>
+                    Software Testing
+                </h3>
+
+                <p>
+                    Software testing fundamentals with practical
+                    experience in manual testing and automation tools.
+                </p>
+
+                <div class="tags">
+                    <span>ISTQB</span>
+                    <span>Test Design</span>
+                    <span>Jira</span>
+                    <span>Postman</span>
+                    <span>Selenium</span>
+                    <span>Static Testing</span>
+                </div>
+
+            </article>
+
+
+            <article class="skill-card">
+
+                <div class="skill-icon">
+                    C++
+                </div>
+
+                <h3>
+                    Programming & Embedded
+                </h3>
+
+                <p>
+                    Programming and embedded systems development across
+                    multiple languages and platforms.
+                </p>
+
+                <div class="tags">
+                    <span>C</span>
+                    <span>C++</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>ROS</span>
+                    <span>MATLAB</span>
+                </div>
+
+            </article>
+
+
+            <article class="skill-card">
+
+                <div class="skill-icon">
+                    AI
+                </div>
+
+                <h3>
+                    Data & AI
+                </h3>
+
+                <p>
+                    Machine learning, data analysis and computer vision
+                    experience.
+                </p>
+
+                <div class="tags">
+                    <span>Scikit-learn</span>
+                    <span>TensorFlow</span>
+                    <span>OpenCV</span>
+                    <span>NumPy</span>
+                    <span>Pandas</span>
+                    <span>SQL</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ENGINEERING APPROACH ================= -->
+
+<section class="section section-alt">
+
+    <div class="container">
+
+        <p class="section-kicker">
+            03 · ENGINEERING APPROACH
+        </p>
+
+        <h2 class="section-title">
+            Design → Build → Test → Improve
+        </h2>
+
+
+        <div class="process">
+
+            <div class="process-step">
+                <span>01</span>
+                <h3>Understand</h3>
+                <p>
+                    Define the problem and requirements.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>02</span>
+                <h3>Design</h3>
+                <p>
+                    Develop the architecture and solution.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>03</span>
+                <h3>Build</h3>
+                <p>
+                    Turn the design into a working system.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>04</span>
+                <h3>Integrate</h3>
+                <p>
+                    Connect hardware and software.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>05</span>
+                <h3>Test</h3>
+                <p>
+                    Verify behavior against requirements.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>06</span>
+                <h3>Analyze</h3>
+                <p>
+                    Find failures and root causes.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>07</span>
+                <h3>Improve</h3>
+                <p>
+                    Iterate toward a better solution.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="process-note">
+            Engineering is an iterative process — every test is feedback.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="section">
+
+    <div class="container">
+
+        <p class="section-kicker">
+            04 · SELECTED PROJECTS
+        </p>
+
+        <h2 class="section-title">
+            Real systems. Real hardware. Real results.
+        </h2>
+
+
+        <div class="projects-grid">
+
+
+            <!-- ROBOT -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="robot.jpg"
+                        alt="Autonomous Shelf Lift Robot"
+                    >
+
+                    <div class="project-label">
+                        ASLR
                     </div>
-                  </div>
 
-                  <div className="project-content">
-                    <p className="project-category">
-                      {project.category}
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        GRADUATION PROJECT · A+
                     </p>
 
-                    <h3>{project.title}</h3>
+                    <h3>
+                        Autonomous Shelf Lift Robot
+                    </h3>
 
-                    <p>{project.description}</p>
+                    <p>
+                        An autonomous warehouse robot designed for
+                        shelf handling, navigation and localization
+                        using ROS1, LiDAR and EKF-based sensor fusion.
+                    </p>
 
-                    <div className="project-achievement">
-                      <Trophy size={16} />
-                      <span>{project.achievement}</span>
+                    <div class="achievement">
+                        ★ A+ Graduation Project
                     </div>
 
-                    <div className="tags">
-                      {project.technologies.map((tag) => (
-                        <span key={tag}>{tag}</span>
-                      ))}
+                    <div class="tags">
+                        <span>ROS1</span>
+                        <span>LiDAR</span>
+                        <span>EKF</span>
+                        <span>Gazebo</span>
+                        <span>SLAM</span>
+                        <span>BMS</span>
                     </div>
 
                     <a
-                      href={project.youtube}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link"
+                        class="project-link"
+                        href="https://www.youtube.com/watch?v=ASLJ3l4_G7o"
+                        target="_blank"
                     >
-                      Watch project demo
-                      <Youtube size={17} />
+                        Watch project demo →
                     </a>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* PROJECT DETAILS */}
-        <section className="section section-alt">
-          <div className="container">
-            <div className="feature-grid">
-              <div className="feature-card">
-                <p className="feature-label">AUTONOMOUS ROBOT</p>
-
-                <h3>Robotics & Autonomous Navigation</h3>
-
-                <p>
-                  The ASLR combines LiDAR-based perception, EKF sensor fusion,
-                  autonomous navigation and localization with a custom lifting
-                  mechanism and charging/BMS system.
-                </p>
-
-                <div className="mini-table">
-                  <div>
-                    <strong>Platform</strong>
-                    <span>ROS1</span>
-                  </div>
-
-                  <div>
-                    <strong>Simulation</strong>
-                    <span>Gazebo</span>
-                  </div>
-
-                  <div>
-                    <strong>Perception</strong>
-                    <span>LiDAR</span>
-                  </div>
-
-                  <div>
-                    <strong>Fusion</strong>
-                    <span>EKF</span>
-                  </div>
                 </div>
-              </div>
 
-              <div className="feature-card">
-                <p className="feature-label">AUTOMATION</p>
+            </article>
 
-                <h3>Industrial Production Line</h3>
 
-                <p>
-                  A physical automated production system integrating robotic
-                  manipulation, machine vision, positioning and industrial
-                  control concepts.
-                </p>
+            <!-- AUTOMATED LINE -->
 
-                <div className="automation-flow">
-                  <span>Feed</span>
-                  <strong>→</strong>
-                  <span>Sort</span>
-                  <strong>→</strong>
-                  <span>Assemble</span>
-                  <strong>→</strong>
-                  <span>Package</span>
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="production-line.jpg"
+                        alt="Automated Production Line"
+                    >
+
+                    <div class="project-label">
+                        AUTOMATION
+                    </div>
+
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* EXPERIENCE */}
-        <section id="experience" className="section">
-          <div className="container narrow">
-            <p className="section-kicker">05 · Experience</p>
+                <div class="project-content">
 
-            <h2 className="section-title">
-              Experience across engineering and technology.
-            </h2>
+                    <p class="project-category">
+                        INDUSTRIAL AUTOMATION
+                    </p>
 
-            <div className="timeline">
-              {experience.map((item) => (
-                <div className="timeline-item" key={item.title}>
-                  <div className="timeline-dot" />
+                    <h3>
+                        Automated Production Line
+                    </h3>
 
-                  <p className="timeline-label">{item.date}</p>
+                    <p>
+                        A complete automated production system integrating
+                        feeding, sorting, assembly and packaging with
+                        robotic manipulation and control.
+                    </p>
 
-                  <h3>{item.title}</h3>
+                    <div class="achievement">
+                        ⚙ Dual Robotic Arms
+                    </div>
 
-                  <p className="timeline-company">{item.company}</p>
+                    <div class="tags">
+                        <span>PLC</span>
+                        <span>Robotics</span>
+                        <span>Machine Vision</span>
+                        <span>PID</span>
+                        <span>SolidWorks</span>
+                        <span>MATLAB</span>
+                    </div>
 
-                  <p>{item.description}</p>
+                    <a
+                        class="project-link"
+                        href="https://www.youtube.com/watch?v=vqTFnu-wJDA"
+                        target="_blank"
+                    >
+                        Watch project demo →
+                    </a>
+
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* EDUCATION */}
-        <section className="section section-alt">
-          <div className="container narrow">
-            <p className="section-kicker">06 · Education</p>
+            </article>
 
-            <h2 className="section-title">
-              Mechatronics Engineering
-            </h2>
 
-            <div className="education-card">
-              <div className="education-icon">
-                <Wrench size={24} />
-              </div>
+            <!-- WATER TURBINE -->
 
-              <div>
-                <h3>Ain Shams University</h3>
+            <article class="project-card">
 
-                <p>
-                  B.Sc. in Mechatronics Engineering · 2020 — 2025
-                </p>
+                <div class="project-image">
 
-                <div className="tags">
-                  <span>Robotics</span>
-                  <span>Automation</span>
-                  <span>Control</span>
-                  <span>Embedded Systems</span>
-                  <span>Mechanical Design</span>
+                    <img
+                        src="water-turbine.jpg"
+                        alt="Water Turbine Project"
+                    >
+
+                    <div class="project-label">
+                        TURBINE
+                    </div>
+
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* CONTACT */}
-        <section id="contact" className="section contact-section">
-          <div className="container">
-            <div className="contact-card">
-              <p className="section-kicker">07 · Contact</p>
+                <div class="project-content">
 
-              <h2>Let's build something useful.</h2>
+                    <p class="project-category">
+                        COMPETITION · 1ST PLACE
+                    </p>
 
-              <p>
-                Interested in software testing, automation, robotics or
-                engineering systems? Feel free to reach out.
-              </p>
+                    <h3>
+                        Water Turbine
+                    </h3>
 
-              <div className="contact-actions">
-                <a
-                  href="mailto:ahmeedhatem76@gmail.com"
-                  className="btn primary"
-                >
-                  <Mail size={18} />
-                  Email Me
-                </a>
+                    <p>
+                        An undershot water turbine developed for a
+                        renewable energy competition, achieving
+                        60% efficiency.
+                    </p>
 
-                <a
-                  href="https://www.linkedin.com/in/ahmeedhatem"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn secondary"
-                >
-                  <Linkedin size={18} />
-                  LinkedIn
-                </a>
+                    <div class="achievement">
+                        ★ 1st Place · 42 Teams · 60% Efficiency
+                    </div>
 
-                <a
-                  href="https://github.com/Ahmdhatem"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn secondary"
-                >
-                  <Github size={18} />
-                  GitHub
-                </a>
-              </div>
+                    <div class="tags">
+                        <span>Renewable Energy</span>
+                        <span>Mechanical Design</span>
+                        <span>Turbine Design</span>
+                        <span>Team Leadership</span>
+                    </div>
 
-              <div className="contact-details">
-                <span>
-                  <MapPin size={15} />
-                  Cairo, Egypt
-                </span>
+                    <a
+                        class="project-link"
+                        href="https://www.youtube.com/shorts/mGp3GZjqD4I"
+                        target="_blank"
+                    >
+                        Watch project demo →
+                    </a>
 
-                <span>
-                  <Mail size={15} />
-                  ahmeedhatem76@gmail.com
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+                </div>
 
-      {/* FOOTER */}
-      <footer>
-        <div className="container footer-inner">
-          <span>
-            © {new Date().getFullYear()} Ahmed Hatem. All rights reserved.
-          </span>
+            </article>
 
-          <a href="#home">Back to top ↑</a>
         </div>
-      </footer>
-    </div>
-  );
-}
 
-export default App;
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience" class="section section-alt">
+
+    <div class="container narrow">
+
+        <p class="section-kicker">
+            05 · EXPERIENCE
+        </p>
+
+        <h2 class="section-title">
+            Experience across engineering and technology.
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <p class="timeline-date">
+                    SEP 2026 — PRESENT
+                </p>
+
+                <h3>
+                    Technical Office Engineer
+                </h3>
+
+                <p class="company">
+                    Orascom Services
+                </p>
+
+                <p>
+                    Research Volvo Penta parts catalogs and technical
+                    documentation, review engine components and service
+                    requirements, and support Spare Parts Operations
+                    with technical information and parts requirements.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <p class="timeline-date">
+                    AUG 2026 — PRESENT
+                </p>
+
+                <h3>
+                    Software Tester Intern
+                </h3>
+
+                <p class="company">
+                    DEPI
+                </p>
+
+                <p>
+                    Completing an ISTQB v4-aligned testing track while
+                    practicing static testing, Jira, Postman, Selenium,
+                    test analysis and design, Java fundamentals and
+                    Agile testing activities.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <p class="timeline-date">
+                    AUG 2025 — AUG 2026
+                </p>
+
+                <h3>
+                    Logistics Specialist
+                </h3>
+
+                <p class="company">
+                    Delotrans Inc.
+                </p>
+
+                <p>
+                    Managed compliance operations for a fleet of 255
+                    trucks under U.S. DOT regulations, supported
+                    GTG/PTI processing for 8,800+ drivers and installed
+                    and configured 100+ ELD systems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="section">
+
+    <div class="container narrow">
+
+        <p class="section-kicker">
+            06 · EDUCATION
+        </p>
+
+        <h2 class="section-title">
+            Mechatronics Engineering
+        </h2>
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                ⚙
+            </div>
+
+            <div>
+
+                <h3>
+                    Ain Shams University
+                </h3>
+
+                <p>
+                    B.Sc. in Mechatronics Engineering · 2020 — 2025
+                </p>
+
+                <div class="tags">
+                    <span>Robotics</span>
+                    <span>Automation</span>
+                    <span>Control</span>
+                    <span>Embedded Systems</span>
+                    <span>Mechanical Design</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="section contact-section">
+
+    <div class="container">
+
+        <div class="contact-card">
+
+            <p class="section-kicker">
+                07 · CONTACT
+            </p>
+
+            <h2>
+                Let's build something useful.
+            </h2>
+
+            <p>
+                Interested in software testing, automation, robotics
+                or engineering systems? Feel free to reach out.
+            </p>
+
+            <div class="contact-actions">
+
+                <a
+                    href="mailto:ahmeedhatem76@gmail.com"
+                    class="btn primary"
+                >
+                    ✉ Email Me
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/ahmeedhatem"
+                    target="_blank"
+                    class="btn secondary"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/Ahmdhatem"
+                    target="_blank"
+                    class="btn secondary"
+                >
+                    GitHub
+                </a>
+
+            </div>
+
+            <div class="contact-details">
+
+                <span>
+                    📍 Cairo, Egypt
+                </span>
+
+                <span>
+                    ✉ ahmeedhatem76@gmail.com
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <span>
+            © 2026 Ahmed Hatem. All rights reserved.
+        </span>
+
+        <a href="#home">
+            Back to top ↑
+        </a>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= MOBILE MENU ================= -->
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("open");
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("open");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
